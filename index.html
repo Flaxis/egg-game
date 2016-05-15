@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Egg game</title>
+        <script src="node_modules/phaser/build/phaser.min.js"></script>
+        <script src="app/game.js"></script>
+        <style>
+            canvas {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            #turn{
+                width:100%;
+                height:100%;
+                position:fixed;
+                top:0;
+                left:0;
+                background-color:white;
+                background-image:url('images/playportrait.png');
+                background-repeat:no-repeat;
+                background-position: center center;
+                display:none;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="turn"></div>
+    <script type="text/javascript">
+        var game;
+        window.onload = function() {
+            var ismobile=navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+            var gameRatio = window.innerWidth/window.innerHeight;
+            var multiplier = Math.max(Math.min(window.innerHeight, 640), 480);
+            var width = Math.ceil(multiplier*gameRatio);
+            if(width > multiplier) {
+                width = Math.ceil(multiplier / 1.25);
+            }
+            if(!ismobile) {
+                width = '100%';
+                multiplier = '100%';
+            }
+            game = new Phaser.Game(width, multiplier, Phaser.CANVAS, '', { preload: preload, create: create, update: update, render: render });
+        };
+
+    </script>
+
+    </body>
+</html>
