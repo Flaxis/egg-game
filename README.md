@@ -2,6 +2,8 @@
 
 This is a simple egg game built in phaser
 
+![Screenshot](http://baasei.nl/new/screenshot.png)
+
 ### Installation
 Clone the git repository:
 ```sh
@@ -22,7 +24,6 @@ The sprites used are open game graphics from Kenney at [opengameart].
 
 Feel free to add new features / gameplay to the game. We still need:
 
-* Score system; the longer you can stay alive, the higher your score gets
 * Death system; when you reach 0 lives, you're game over. At game over, you can replay or share your score on Facebook.
 * Title screen with menu options
 * Sound and music settings
